@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <h1>Character Comparison</h1>
+            <div class="character-list">
+                <div v-for="character in characters" :key="character.Name">
+                    <input type="checkbox" :id="character.Name" :value="character.Name" v-model="selectedCharacters">
+                    <label :for="character.Name">{{ character.Name }}</label>
+                </div>
+            </div>
+        </div>
+        <canvas id="radarChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
